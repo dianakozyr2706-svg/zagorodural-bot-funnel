@@ -1,0 +1,64 @@
+<mxfile host="app.diagrams.net" modified="2026-05-19T00:00:00.000Z" agent="Codex" version="24.0.0" type="device">
+  <diagram id="zagorodural-funnel" name="Воронка @ZagorodURAL_bot">
+    <mxGraphModel dx="1800" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="center" value="Воронка Telegram-бота&#xa;@ZagorodURAL_bot" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#18453f;fontColor=#fff3e0;strokeColor=#18453f;fontSize=20;fontStyle=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="720" y="470" width="280" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="goal" value="Цель&#xa;Заявка на расчет, консультацию или экскурсию" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fee7c6;strokeColor=#b06f4f;fontSize=14;fontStyle=1;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="700" y="80" width="320" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="start" value="Старт бота&#xa;Приветствие + выбор интереса&#xa;&#xa;Кнопки:&#xa;• Рассчитать дом&#xa;• Ищу участок&#xa;• Готовый дом&#xa;• Ипотека&#xa;• Просто смотрю" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff8ec;strokeColor=#b06f4f;fontSize=13;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="650" y="220" width="420" height="170" as="geometry"/>
+        </mxCell>
+        <mxCell id="calc" value="1. Хочу рассчитать дом&#xa;&#xa;5 вопросов:&#xa;• этажность&#xa;• площадь&#xa;• есть ли проект&#xa;• есть ли участок&#xa;• срок строительства&#xa;&#xa;CTA: Получить расчет" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f3ef;strokeColor=#18453f;fontSize=13;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="80" y="230" width="330" height="210" as="geometry"/>
+        </mxCell>
+        <mxCell id="land" value="2. Ищу участок&#xa;&#xa;Критерии:&#xa;• ближе к Екатеринбургу&#xa;• лес / природа&#xa;• газ и коммуникации&#xa;• единый стиль поселка&#xa;&#xa;CTA: Подобрать участок" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f3ef;strokeColor=#18453f;fontSize=13;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="80" y="620" width="330" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="ready" value="3. Хочу готовый дом&#xa;&#xa;Сегменты:&#xa;• под чистовую&#xa;• с ремонтом&#xa;• дом + участок&#xa;• посмотреть варианты&#xa;&#xa;CTA: Получить подборку" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef1f7;strokeColor=#5d6f8f;fontSize=13;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="520" y="740" width="330" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="mortgage" value="4. Ипотека / рассрочка&#xa;&#xa;Темы:&#xa;• ипотека на дом&#xa;• рассрочка&#xa;• дом + участок&#xa;• узнать платеж&#xa;&#xa;CTA: Консультация по ипотеке" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef1f7;strokeColor=#5d6f8f;fontSize=13;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="900" y="740" width="340" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="browse" value="5. Просто смотрю&#xa;&#xa;Мягкая навигация:&#xa;• проекты домов&#xa;• участки&#xa;• портфолио&#xa;• ипотека и рассрочка&#xa;• соцсети" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff8ec;strokeColor=#b06f4f;fontSize=13;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="620" width="340" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="projects" value="6. Посмотреть проекты&#xa;&#xa;Направления:&#xa;• газоблок&#xa;• ФинСтройПанель&#xa;• одноэтажные&#xa;• двухэтажные&#xa;• индивидуальный проект&#xa;&#xa;CTA: Подобрать проект" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f3ef;strokeColor=#18453f;fontSize=13;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="230" width="340" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="tour" value="7. Запись на экскурсию&#xa;&#xa;Офис: Екатеринбург, ул. Луганская, 6&#xa;Будни: 10:00-19:00&#xa;Выходные: по записи&#xa;&#xa;CTA: Выбрать время" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fee7c6;strokeColor=#b06f4f;fontSize=13;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="80" width="360" height="170" as="geometry"/>
+        </mxCell>
+        <mxCell id="followup" value="8. Дожимы&#xa;&#xa;Через 2 часа: напомнить про расчет&#xa;На следующий день: объяснить пользу консультации&#xa;На 3 день: прогреть через комплексный подход&#xa;&#xa;CTA: Получить консультацию" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f4e8dc;strokeColor=#8a5a3b;fontSize=13;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="530" y="980" width="460" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="socials" value="9. Соцсети и сайт&#xa;&#xa;Сайт: zagorodom96.ru&#xa;TG: t.me/zagorodomekb&#xa;VK: vk.ru/zagorodom96ru&#xa;MAX: max.ru/id660206183232_biz" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff8ec;strokeColor=#b06f4f;fontSize=13;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="360" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="lead" value="Передача лида менеджеру&#xa;&#xa;Имя, телефон, интерес, этажность, площадь, проект, участок, срок, источник @ZagorodURAL_bot" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#18453f;fontColor=#fff3e0;strokeColor=#18453f;fontSize=13;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="980" width="450" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_goal" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#8a5a3b;endArrow=classic;" edge="1" parent="1" source="goal" target="start"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_start_center" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#18453f;endArrow=classic;" edge="1" parent="1" source="start" target="center"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_calc" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#18453f;endArrow=classic;" edge="1" parent="1" source="center" target="calc"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_land" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#18453f;endArrow=classic;" edge="1" parent="1" source="center" target="land"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_ready" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#5d6f8f;endArrow=classic;" edge="1" parent="1" source="center" target="ready"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_mortgage" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#5d6f8f;endArrow=classic;" edge="1" parent="1" source="center" target="mortgage"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_browse" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#b06f4f;endArrow=classic;" edge="1" parent="1" source="center" target="browse"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_projects" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#18453f;endArrow=classic;" edge="1" parent="1" source="center" target="projects"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_tour" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#b06f4f;endArrow=classic;" edge="1" parent="1" source="center" target="tour"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_followup" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#8a5a3b;endArrow=classic;" edge="1" parent="1" source="center" target="followup"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_socials" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#b06f4f;endArrow=classic;" edge="1" parent="1" source="center" target="socials"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_lead_calc" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#18453f;endArrow=classic;dashed=1;" edge="1" parent="1" source="calc" target="lead"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_lead_land" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#18453f;endArrow=classic;dashed=1;" edge="1" parent="1" source="land" target="lead"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_lead_ready" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#5d6f8f;endArrow=classic;dashed=1;" edge="1" parent="1" source="ready" target="lead"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e_lead_mortgage" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#5d6f8f;endArrow=classic;dashed=1;" edge="1" parent="1" source="mortgage" target="lead"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

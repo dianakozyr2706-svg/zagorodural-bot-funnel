@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Воронка @ZagorodURAL_bot</title>
+  <style>
+    :root {
+      --green: #18453f;
+      --green-soft: #e8f3ef;
+      --cream: #fff8ec;
+      --gold: #fee7c6;
+      --brown: #b06f4f;
+      --blue: #eef1f7;
+      --blue-line: #5d6f8f;
+      --ink: #202426;
+      --muted: #5f6867;
+      --line: #d8c5ad;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--ink);
+      background: #f7f3ec;
+    }
+
+    .page {
+      min-width: 1320px;
+      padding: 36px;
+    }
+
+    header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.05;
+      color: var(--green);
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.45;
+      text-align: right;
+    }
+
+    .map {
+      position: relative;
+      display: grid;
+      grid-template-columns: 330px 330px 330px 330px;
+      grid-template-rows: auto auto auto auto;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .node {
+      position: relative;
+      z-index: 2;
+      min-height: 130px;
+      padding: 18px 18px 16px;
+      border: 2px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      box-shadow: 0 12px 28px rgba(45, 35, 24, 0.08);
+    }
+
+    .node h2 {
+      margin: 0 0 10px;
+      font-size: 17px;
+      line-height: 1.2;
+      color: var(--green);
+      letter-spacing: 0;
+    }
+
+    .node p {
+      margin: 0 0 10px;
+      color: var(--ink);
+      font-size: 14px;
+      line-height: 1.38;
+    }
+
+    .node ul {
+      margin: 8px 0 0;
+      padding-left: 18px;
+      font-size: 14px;
+      line-height: 1.42;
+    }
+
+    .node li { margin: 3px 0; }
+
+    .center {
+      grid-column: 2 / span 2;
+      grid-row: 2;
+      display: flex;
+      min-height: 170px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: var(--green);
+      color: var(--gold);
+      border-color: var(--green);
+    }
+
+    .center h2 {
+      margin: 0;
+      color: var(--gold);
+      font-size: 28px;
+      line-height: 1.15;
+    }
+
+    .goal { grid-column: 2 / span 2; grid-row: 1; background: var(--gold); border-color: var(--brown); }
+    .start { grid-column: 1; grid-row: 2; background: var(--cream); border-color: var(--brown); }
+    .calc { grid-column: 1; grid-row: 3; background: var(--green-soft); border-color: var(--green); }
+    .land { grid-column: 1; grid-row: 4; background: var(--green-soft); border-color: var(--green); }
+    .ready { grid-column: 2; grid-row: 3; background: var(--blue); border-color: var(--blue-line); }
+    .mortgage { grid-column: 3; grid-row: 3; background: var(--blue); border-color: var(--blue-line); }
+    .browse { grid-column: 4; grid-row: 2; background: var(--cream); border-color: var(--brown); }
+    .projects { grid-column: 4; grid-row: 3; background: var(--green-soft); border-color: var(--green); }
+    .tour { grid-column: 4; grid-row: 1; background: var(--gold); border-color: var(--brown); }
+    .followup { grid-column: 2 / span 2; grid-row: 4; background: #f4e8dc; border-color: #8a5a3b; }
+    .socials { grid-column: 1; grid-row: 1; background: var(--cream); border-color: var(--brown); }
+    .lead { grid-column: 4; grid-row: 4; background: var(--green); color: var(--gold); border-color: var(--green); }
+    .lead h2 { color: var(--gold); }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      margin-top: 8px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: rgba(24, 69, 63, 0.1);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .lead .tag,
+    .center .tag {
+      background: rgba(254, 231, 198, 0.16);
+      color: var(--gold);
+    }
+
+    .line {
+      position: absolute;
+      z-index: 1;
+      background: var(--line);
+      border-radius: 999px;
+      opacity: 0.95;
+    }
+
+    .line.v1 { left: 682px; top: 150px; width: 3px; height: 360px; }
+    .line.h1 { left: 168px; top: 420px; width: 980px; height: 3px; }
+    .line.h2 { left: 682px; top: 650px; width: 475px; height: 3px; }
+    .line.v2 { left: 168px; top: 420px; width: 3px; height: 530px; }
+    .line.v3 { left: 682px; top: 510px; width: 3px; height: 430px; }
+    .line.v4 { left: 1040px; top: 510px; width: 3px; height: 430px; }
+    .line.v5 { left: 1212px; top: 152px; width: 3px; height: 790px; }
+
+    a { color: inherit; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>Воронка Telegram-бота<br>@ZagorodURAL_bot</h1>
+      <div class="subtitle">Карта воронки для клиента «Загородная недвижимость Урала»: старт, ветки интереса, сбор заявки, дожимы и передача лида менеджеру.</div>
+    </header>
+
+    <section class="map" aria-label="Карта воронки">
+      <div class="line v1"></div>
+      <div class="line h1"></div>
+      <div class="line h2"></div>
+      <div class="line v2"></div>
+      <div class="line v3"></div>
+      <div class="line v4"></div>
+      <div class="line v5"></div>
+
+      <article class="node socials">
+        <h2>Соцсети и сайт</h2>
+        <p>Ссылки для прогрева и проверки компании.</p>
+        <ul>
+          <li>zagorodom96.ru</li>
+          <li>t.me/zagorodomekb</li>
+          <li>vk.ru/zagorodom96ru</li>
+          <li>max.ru/id660206183232_biz</li>
+        </ul>
+      </article>
+
+      <article class="node goal">
+        <h2>Цель</h2>
+        <p>Получить заявку на расчет стоимости дома, консультацию или запись на экскурсию.</p>
+        <span class="tag">Основной CTA: получить расчет</span>
+      </article>
+
+      <article class="node tour">
+        <h2>Запись на экскурсию</h2>
+        <p>Офис: Екатеринбург, ул. Луганская, 6. Будни с 10:00 до 19:00, выходные по предварительной записи.</p>
+        <span class="tag">CTA: выбрать время</span>
+      </article>
+
+      <article class="node start">
+        <h2>Старт бота</h2>
+        <p>Приветствие и выбор актуального запроса.</p>
+        <ul>
+          <li>Хочу рассчитать дом</li>
+          <li>Ищу участок</li>
+          <li>Хочу готовый дом</li>
+          <li>Нужна ипотека</li>
+          <li>Просто смотрю</li>
+        </ul>
+      </article>
+
+      <article class="node center">
+        <h2>Главное меню<br>бота</h2>
+      </article>
+
+      <article class="node browse">
+        <h2>Просто смотрю</h2>
+        <p>Мягкая навигация без давления.</p>
+        <ul>
+          <li>Проекты домов</li>
+          <li>Участки</li>
+          <li>Портфолио</li>
+          <li>Ипотека и рассрочка</li>
+          <li>Соцсети</li>
+        </ul>
+      </article>
+
+      <article class="node calc">
+        <h2>Хочу рассчитать дом</h2>
+        <p>Квалификация через 5 вопросов.</p>
+        <ul>
+          <li>Этажность</li>
+          <li>Площадь</li>
+          <li>Есть ли проект</li>
+          <li>Есть ли участок</li>
+          <li>Срок строительства</li>
+        </ul>
+        <span class="tag">CTA: получить расчет</span>
+      </article>
+
+      <article class="node ready">
+        <h2>Хочу готовый дом</h2>
+        <p>Выяснить формат покупки и передать горячий запрос.</p>
+        <ul>
+          <li>Под чистовую</li>
+          <li>С ремонтом</li>
+          <li>Дом + участок</li>
+          <li>Посмотреть варианты</li>
+        </ul>
+        <span class="tag">CTA: получить подборку</span>
+      </article>
+
+      <article class="node mortgage">
+        <h2>Ипотека / рассрочка</h2>
+        <p>Снять страх по финансированию и вывести на консультацию.</p>
+        <ul>
+          <li>Ипотека на дом</li>
+          <li>Рассрочка</li>
+          <li>Дом + участок</li>
+          <li>Узнать платеж</li>
+        </ul>
+        <span class="tag">CTA: консультация</span>
+      </article>
+
+      <article class="node projects">
+        <h2>Посмотреть проекты</h2>
+        <p>Показать направления и предложить подбор.</p>
+        <ul>
+          <li>Газоблок</li>
+          <li>ФинСтройПанель</li>
+          <li>Одноэтажные</li>
+          <li>Двухэтажные</li>
+          <li>Индивидуальный проект</li>
+        </ul>
+      </article>
+
+      <article class="node land">
+        <h2>Ищу участок</h2>
+        <p>Сегментация по критериям участка.</p>
+        <ul>
+          <li>Ближе к Екатеринбургу</li>
+          <li>Лес / природа</li>
+          <li>Газ и коммуникации</li>
+          <li>Единый стиль поселка</li>
+        </ul>
+        <span class="tag">CTA: подобрать участок</span>
+      </article>
+
+      <article class="node followup">
+        <h2>Дожимы</h2>
+        <ul>
+          <li>Через 2 часа: напомнить про расчет</li>
+          <li>На следующий день: объяснить пользу консультации</li>
+          <li>На 3 день: прогреть через комплексный подход</li>
+        </ul>
+        <span class="tag">CTA: получить консультацию</span>
+      </article>
+
+      <article class="node lead">
+        <h2>Передача лида менеджеру</h2>
+        <p>Имя, телефон, интерес, этажность, площадь, проект, участок, срок, источник @ZagorodURAL_bot.</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
