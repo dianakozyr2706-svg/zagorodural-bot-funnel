@@ -16,6 +16,7 @@
       --ink: #202426;
       --muted: #5f6867;
       --line: #d8c5ad;
+      --white: #ffffff;
     }
 
     * { box-sizing: border-box; }
@@ -49,7 +50,7 @@
     }
 
     .subtitle {
-      max-width: 520px;
+      max-width: 560px;
       color: var(--muted);
       font-size: 15px;
       line-height: 1.45;
@@ -63,6 +64,7 @@
       grid-template-rows: auto auto auto auto;
       gap: 28px;
       align-items: stretch;
+      margin-bottom: 46px;
     }
 
     .node {
@@ -109,13 +111,13 @@
       justify-content: center;
       text-align: center;
       background: var(--green);
-      color: var(--gold);
+      color: var(--white);
       border-color: var(--green);
     }
 
     .center h2 {
       margin: 0;
-      color: var(--gold);
+      color: var(--white);
       font-size: 28px;
       line-height: 1.15;
     }
@@ -131,8 +133,9 @@
     .tour { grid-column: 4; grid-row: 1; background: var(--gold); border-color: var(--brown); }
     .followup { grid-column: 2 / span 2; grid-row: 4; background: #f4e8dc; border-color: #8a5a3b; }
     .socials { grid-column: 1; grid-row: 1; background: var(--cream); border-color: var(--brown); }
-    .lead { grid-column: 4; grid-row: 4; background: var(--green); color: var(--gold); border-color: var(--green); }
-    .lead h2 { color: var(--gold); }
+    .lead { grid-column: 4; grid-row: 4; background: var(--green); color: var(--white); border-color: var(--green); }
+    .lead h2,
+    .lead p { color: var(--white); }
 
     .tag {
       display: inline-flex;
@@ -149,8 +152,8 @@
 
     .lead .tag,
     .center .tag {
-      background: rgba(254, 231, 198, 0.16);
-      color: var(--gold);
+      background: rgba(255, 255, 255, 0.16);
+      color: var(--white);
     }
 
     .line {
@@ -169,6 +172,108 @@
     .line.v4 { left: 1040px; top: 510px; width: 3px; height: 430px; }
     .line.v5 { left: 1212px; top: 152px; width: 3px; height: 790px; }
 
+    .section-title {
+      margin: 0 0 18px;
+      color: var(--green);
+      font-size: 28px;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .funnel {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      align-items: start;
+    }
+
+    .step {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 10px 24px rgba(45, 35, 24, 0.06);
+    }
+
+    .step.wide { grid-column: 1 / -1; }
+
+    .step h3 {
+      margin: 0 0 12px;
+      color: var(--green);
+      font-size: 20px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .label {
+      margin: 14px 0 6px;
+      color: var(--brown);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .message {
+      margin: 0;
+      padding: 14px 16px;
+      border-left: 4px solid var(--green);
+      border-radius: 6px;
+      background: var(--green-soft);
+      font-size: 14px;
+      line-height: 1.5;
+      white-space: pre-line;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 8px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .buttons li {
+      padding: 7px 10px;
+      border: 1px solid rgba(24, 69, 63, 0.22);
+      border-radius: 999px;
+      background: var(--cream);
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .questions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .question {
+      padding: 13px;
+      border: 1px solid rgba(24, 69, 63, 0.16);
+      border-radius: 8px;
+      background: #fbf7ef;
+    }
+
+    .question strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--green);
+      font-size: 14px;
+    }
+
+    .links a {
+      display: block;
+      margin: 5px 0;
+      color: var(--green);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
     a { color: inherit; }
   </style>
 </head>
@@ -176,7 +281,7 @@
   <main class="page">
     <header>
       <h1>Воронка Telegram-бота<br>@ZagorodURAL_bot</h1>
-      <div class="subtitle">Карта воронки для клиента «Загородная недвижимость Урала»: старт, ветки интереса, сбор заявки, дожимы и передача лида менеджеру.</div>
+      <div class="subtitle">Карта и полный сценарий для клиента «Загородная недвижимость Урала»: старт, ветки интереса, сообщения, кнопки, дожимы и передача лида менеджеру.</div>
     </header>
 
     <section class="map" aria-label="Карта воронки">
@@ -313,6 +418,242 @@
       <article class="node lead">
         <h2>Передача лида менеджеру</h2>
         <p>Имя, телефон, интерес, этажность, площадь, проект, участок, срок, источник @ZagorodURAL_bot.</p>
+      </article>
+    </section>
+
+    <h2 class="section-title">Полная воронка с текстами</h2>
+
+    <section class="funnel" aria-label="Полный сценарий бота">
+      <article class="step wide">
+        <h3>0. Главное меню</h3>
+        <div class="label">Сообщение</div>
+        <p class="message">Здравствуйте! Это бот строительной компании «Загородная недвижимость Урала».
+
+Мы проектируем и строим современные загородные дома в Екатеринбурге и в радиусе 60 км от города, помогаем с выбором участка, ипотекой и сопровождением сделки.
+
+Чтобы я быстрее понял ваш запрос, выберите, что вам сейчас актуальнее.</p>
+        <div class="label">Кнопки</div>
+        <ul class="buttons">
+          <li>Хочу рассчитать дом</li>
+          <li>Ищу участок</li>
+          <li>Хочу готовый дом</li>
+          <li>Нужна ипотека</li>
+          <li>Просто смотрю варианты</li>
+        </ul>
+      </article>
+
+      <article class="step wide">
+        <h3>1. Ветка «Хочу рассчитать дом»</h3>
+        <div class="label">Сообщение</div>
+        <p class="message">Отлично. Ответьте на несколько вопросов, и менеджер подготовит предварительный расчет под ваши параметры.</p>
+        <div class="questions">
+          <div class="question"><strong>Вопрос 1. Сколько этажей рассматриваете?</strong>1 этаж / 2 этажа / Пока не знаю</div>
+          <div class="question"><strong>Вопрос 2. Какая площадь дома вам нужна?</strong>До 100 м2 / 100-130 м2 / 130-150 м2 / 150-180 м2 / 180-200 м2 / Более 200 м2</div>
+          <div class="question"><strong>Вопрос 3. У вас уже есть проект?</strong>Да / Нет / Есть примеры / Нужен индивидуальный проект</div>
+          <div class="question"><strong>Вопрос 4. Земельный участок уже есть?</strong>Да, в пригороде / Да, в области / Нет участка / Нужна помощь с подбором</div>
+          <div class="question"><strong>Вопрос 5. Когда планируете строительство?</strong>Как можно скорее / В ближайший месяц / Через 2-3 месяца / В течение 6 месяцев / Пока прицениваюсь</div>
+        </div>
+        <div class="label">Сбор контакта</div>
+        <p class="message">Спасибо, уже понятно, какой вариант вам нужен.
+
+Оставьте номер телефона, чтобы менеджер смог подготовить предварительный расчет, подсказать подходящие проекты, рассказать про участки и сориентировать по ипотеке или рассрочке.</p>
+        <ul class="buttons">
+          <li>Имя</li>
+          <li>Телефон</li>
+          <li>Получить расчет</li>
+        </ul>
+        <div class="label">Согласие</div>
+        <p class="message">Нажимая кнопку, вы соглашаетесь на обработку персональных данных и принимаете политику конфиденциальности: https://zagorodom96.ru/privacy</p>
+      </article>
+
+      <article class="step">
+        <h3>2. Ветка «Ищу участок»</h3>
+        <div class="label">Сообщение</div>
+        <p class="message">У «Загородной недвижимости Урала» есть предложения по участкам и коттеджным поселкам. Например, КП «Шиловский парк» в Чкаловском районе Екатеринбурга: участки ИЖС, закрытый въезд, видеонаблюдение, электричество и газ, асфальтированное покрытие, освещение.
+
+Что для вас важнее при выборе участка?</p>
+        <div class="label">Кнопки</div>
+        <ul class="buttons">
+          <li>Ближе к Екатеринбургу</li>
+          <li>Лес / природа</li>
+          <li>Газ и коммуникации</li>
+          <li>Поселок с единым стилем</li>
+          <li>Нужна консультация</li>
+        </ul>
+        <div class="label">Сбор контакта</div>
+        <p class="message">Оставьте телефон, и менеджер подберет варианты участков под вашу задачу и бюджет.</p>
+        <ul class="buttons"><li>Подобрать участок</li></ul>
+      </article>
+
+      <article class="step">
+        <h3>3. Ветка «Хочу готовый дом»</h3>
+        <div class="label">Сообщение</div>
+        <p class="message">Подберем варианты домов под ваш запрос: площадь, локация, готовность, участок и формат покупки.
+
+Что для вас сейчас важнее?</p>
+        <div class="label">Кнопки</div>
+        <ul class="buttons">
+          <li>Дом под чистовую</li>
+          <li>Дом с ремонтом</li>
+          <li>Дом + участок</li>
+          <li>Хочу посмотреть варианты</li>
+          <li>Нужна консультация</li>
+        </ul>
+        <div class="label">Сбор контакта</div>
+        <p class="message">Оставьте телефон, и менеджер подскажет, какие варианты сейчас есть в продаже и что можно посмотреть.</p>
+        <ul class="buttons"><li>Получить подборку</li></ul>
+      </article>
+
+      <article class="step">
+        <h3>4. Ветка «Нужна ипотека»</h3>
+        <div class="label">Сообщение</div>
+        <p class="message">Дом можно рассматривать не только за собственные средства. Компания работает с ипотекой на строительство дома, а на сайте указаны условия ипотеки от 6%.
+
+Менеджер подскажет, какие программы сейчас подходят под вашу ситуацию, какой нужен первоначальный взнос и можно ли включить строительство в удобный формат оплаты.</p>
+        <div class="label">Кнопки</div>
+        <ul class="buttons">
+          <li>Ипотека на дом</li>
+          <li>Рассрочка</li>
+          <li>Дом + участок</li>
+          <li>Хочу узнать платеж</li>
+        </ul>
+        <div class="label">Сбор контакта</div>
+        <p class="message">Оставьте телефон, чтобы менеджер рассчитал возможный сценарий покупки.</p>
+        <ul class="buttons"><li>Получить консультацию по ипотеке</li></ul>
+      </article>
+
+      <article class="step">
+        <h3>5. Ветка «Просто смотрю варианты»</h3>
+        <div class="label">Сообщение</div>
+        <p class="message">Хорошо. Можно начать с проектов, участков или примеров построенных домов.
+
+Что хотите посмотреть сначала?</p>
+        <div class="label">Кнопки</div>
+        <ul class="buttons">
+          <li>Проекты домов</li>
+          <li>Участки</li>
+          <li>Портфолио</li>
+          <li>Ипотека и рассрочка</li>
+          <li>Соцсети</li>
+        </ul>
+        <div class="label">Переходы</div>
+        <p class="message">Проекты домов -> Ветка «Посмотреть проекты»
+Участки -> Ветка «Ищу участок»
+Ипотека и рассрочка -> Ветка «Нужна ипотека»
+Соцсети -> Блок «Соцсети и сайт»</p>
+      </article>
+
+      <article class="step">
+        <h3>6. Ветка «Посмотреть проекты»</h3>
+        <div class="label">Сообщение</div>
+        <p class="message">Можно выбрать типовой проект или заказать индивидуальное проектирование. Если строитесь с компанией, планировку можно адаптировать под ваши пожелания.
+
+Что отправить?</p>
+        <div class="label">Кнопки</div>
+        <ul class="buttons">
+          <li>Проекты из газоблока</li>
+          <li>ФинСтройПанель</li>
+          <li>Одноэтажные дома</li>
+          <li>Двухэтажные дома</li>
+          <li>Индивидуальный проект</li>
+        </ul>
+        <div class="label">После клика</div>
+        <p class="message">Посмотрите проекты на сайте: https://zagorodom96.ru
+
+Если хотите, менеджер подберет 2-3 варианта под вашу площадь, бюджет и участок.</p>
+        <ul class="buttons"><li>Подобрать проект</li></ul>
+      </article>
+
+      <article class="step">
+        <h3>7. Запись на экскурсию</h3>
+        <div class="label">Сообщение</div>
+        <p class="message">Можно приехать на консультацию или экскурсию и посмотреть варианты вживую.
+
+Адрес офиса: Екатеринбург, ул. Луганская, 6
+График: будни с 10:00 до 19:00, выходные по предварительной записи
+Телефон: +7 922 185-53-70</p>
+        <div class="label">Кнопки</div>
+        <ul class="buttons">
+          <li>Сегодня / завтра</li>
+          <li>В будни</li>
+          <li>В выходные</li>
+          <li>Пусть менеджер предложит время</li>
+        </ul>
+        <div class="label">Поля</div>
+        <ul class="buttons">
+          <li>Имя</li>
+          <li>Телефон</li>
+          <li>Удобное время</li>
+        </ul>
+      </article>
+
+      <article class="step wide">
+        <h3>8. Дожимы</h3>
+        <div class="label">Через 2 часа</div>
+        <p class="message">Вы начали подбор дома, но не оставили контакт.
+
+Чтобы назвать реалистичную стоимость, нужно понимать площадь, участок, проект и сроки. Менеджер может быстро сориентировать вас без обязательств.
+
+Хотите, закрепим за вами консультацию?</p>
+        <ul class="buttons">
+          <li>Да, нужна консультация</li>
+          <li>Пока смотрю</li>
+          <li>Посмотреть сайт</li>
+        </ul>
+        <div class="label">На следующий день</div>
+        <p class="message">Загородный дом проще выбирать, когда есть понятная отправная точка: участок, проект, бюджет и срок строительства.
+
+Мы можем помочь подобрать проект, оценить строительство, подсказать участки, рассказать про ипотеку и записать на консультацию или экскурсию.</p>
+        <ul class="buttons"><li>Получить консультацию</li></ul>
+        <div class="label">На 3 день</div>
+        <p class="message">Почему клиенты выбирают строительство с компанией, а не пытаются собирать все самостоятельно?
+
+Потому что в одном месте можно закрыть ключевые вопросы: проект, участок, договор, строительство, контроль этапов, ипотека и сопровождение сделки.
+
+Если хотите, менеджер покажет подходящие варианты под вашу ситуацию.</p>
+        <ul class="buttons">
+          <li>Рассчитать дом</li>
+          <li>Подобрать участок</li>
+          <li>Записаться на экскурсию</li>
+        </ul>
+      </article>
+
+      <article class="step">
+        <h3>9. Соцсети и сайт</h3>
+        <div class="label">Сообщение</div>
+        <p class="message">Полезные ссылки «Загородной недвижимости Урала»:</p>
+        <div class="links">
+          <a href="https://zagorodom96.ru">Сайт: https://zagorodom96.ru</a>
+          <a href="https://t.me/zagorodomekb">Telegram: https://t.me/zagorodomekb</a>
+          <a href="https://vk.ru/zagorodom96ru">VK: https://vk.ru/zagorodom96ru</a>
+          <a href="https://max.ru/id660206183232_biz">MAX: https://max.ru/id660206183232_biz</a>
+        </div>
+        <div class="label">Примечание</div>
+        <p class="message">Instagram указан как ссылка на Telegram. Если есть настоящая ссылка Instagram, ее лучше заменить перед запуском.</p>
+      </article>
+
+      <article class="step">
+        <h3>10. Передача лида менеджеру</h3>
+        <div class="label">Данные заявки</div>
+        <ul class="buttons">
+          <li>Имя</li>
+          <li>Телефон</li>
+          <li>Интерес</li>
+          <li>Этажность</li>
+          <li>Площадь</li>
+          <li>Наличие проекта</li>
+          <li>Наличие участка</li>
+          <li>Срок строительства</li>
+          <li>Источник: @ZagorodURAL_bot</li>
+        </ul>
+        <div class="label">Уведомление менеджеру</div>
+        <p class="message">Новая заявка из Telegram-бота
+Интерес: {{interest}}
+Имя: {{name}}
+Телефон: {{phone}}
+Площадь: {{area}}
+Участок: {{land_status}}
+Срок: {{timeline}}</p>
       </article>
     </section>
   </main>

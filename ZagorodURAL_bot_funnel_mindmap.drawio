@@ -4,7 +4,7 @@
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
-        <mxCell id="center" value="Воронка Telegram-бота&#xa;@ZagorodURAL_bot" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#18453f;fontColor=#fff3e0;strokeColor=#18453f;fontSize=20;fontStyle=1;arcSize=12;" vertex="1" parent="1">
+        <mxCell id="center" value="Воронка Telegram-бота&#xa;@ZagorodURAL_bot" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#18453f;fontColor=#ffffff;strokeColor=#18453f;fontSize=20;fontStyle=1;arcSize=12;" vertex="1" parent="1">
           <mxGeometry x="720" y="470" width="280" height="110" as="geometry"/>
         </mxCell>
         <mxCell id="goal" value="Цель&#xa;Заявка на расчет, консультацию или экскурсию" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fee7c6;strokeColor=#b06f4f;fontSize=14;fontStyle=1;arcSize=10;" vertex="1" parent="1">
@@ -40,7 +40,7 @@
         <mxCell id="socials" value="9. Соцсети и сайт&#xa;&#xa;Сайт: zagorodom96.ru&#xa;TG: t.me/zagorodomekb&#xa;VK: vk.ru/zagorodom96ru&#xa;MAX: max.ru/id660206183232_biz" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff8ec;strokeColor=#b06f4f;fontSize=13;arcSize=8;" vertex="1" parent="1">
           <mxGeometry x="80" y="80" width="360" height="150" as="geometry"/>
         </mxCell>
-        <mxCell id="lead" value="Передача лида менеджеру&#xa;&#xa;Имя, телефон, интерес, этажность, площадь, проект, участок, срок, источник @ZagorodURAL_bot" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#18453f;fontColor=#fff3e0;strokeColor=#18453f;fontSize=13;arcSize=8;" vertex="1" parent="1">
+        <mxCell id="lead" value="Передача лида менеджеру&#xa;&#xa;Имя, телефон, интерес, этажность, площадь, проект, участок, срок, источник @ZagorodURAL_bot" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#18453f;fontColor=#ffffff;strokeColor=#18453f;fontSize=13;arcSize=8;" vertex="1" parent="1">
           <mxGeometry x="1080" y="980" width="450" height="130" as="geometry"/>
         </mxCell>
         <mxCell id="e_goal" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#8a5a3b;endArrow=classic;" edge="1" parent="1" source="goal" target="start"><mxGeometry relative="1" as="geometry"/></mxCell>
